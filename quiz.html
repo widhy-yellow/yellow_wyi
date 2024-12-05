@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Penjumlahan dan Pengurangan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        function checkAnswers() {
+            const correctAnswers = [5, 3, -1, 7, -2, 10, -6, 4, 1, 0];
+            let score = 0;
+
+            for (let i = 0; i < correctAnswers.length; i++) {
+                const userAnswer = document.getElementById(`answer${i}`).value;
+                if (parseInt(userAnswer) === correctAnswers[i]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = `Skor Anda: ${score}/10`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Quiz Penjumlahan dan Pengurangan</h1>
+    <form onsubmit="event.preventDefault(); checkAnswers();">
+        <div class="question">
+            1. 3 + 2 = 
+            <input type="number" id="answer0" required>
+        </div>
+        <div class="question">
+            2. 5 - 2 = 
+            <input type="number" id="answer1" required>
+        </div>
+        <div class="question">
+            3. -3 + 2 = 
+            <input type="number" id="answer2" required>
+        </div>
+        <div class="question">
+            4. 4 + 3 = 
+            <input type="number" id="answer3" required>
+        </div>
+        <div class="question">
+            5. -1 - 1 = 
+            <input type="number" id="answer4" required>
+        </div>
+        <div class="question">
+            6. 8 + 2 = 
+            <input type="number" id="answer5" required>
+        </div>
+        <div class="question">
+            7. -4 - 2 = 
+            <input type="number" id="answer6" required>
+        </div>
+        <div class="question">
+            8. 6 - 2 = 
+            <input type="number" id="answer7" required>
+        </div>
+        <div class="question">
+            9. -3 + 4 = 
+            <input type="number" id="answer8" required>
+        </div>
+        <div class="question">
+            10. 0 - 0 = 
+            <input type="number" id="answer9" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="result" id="result"></div>
+</body>
+</html>
